@@ -1,0 +1,16 @@
+kind: Service
+metadata:
+  labels:
+    io.kompose.service: server-service
+  name: server-service
+  namespace: {{ .Values.global.namespace }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: "server-9000"
+      port: 9000
+      targetPort: 9000
+  selector:
+    io.kompose.service: server-service
+status:
+  loadBalancer: {}

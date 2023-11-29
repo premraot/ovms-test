@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: ovms-server
+  name: ovms-server
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      io.kompose.service: ovms-server
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.network/stable-df-helm-default: "true"
+        io.kompose.service: ovms-server
+    spec:
+      serviceAccountName: {{ .Values.serviceAccount.name}}
+      serviceAccount: {{ .Values.serviceAccount.name}}
+      containers:
+        - name: ovms-server
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /app
+              name: ovms-server-claim0
+      restartPolicy: Always
+      volumes:
+        - name: ovms-server-claim0
+          persistentVolumeClaim:
+            claimName: ovms-server-claim0

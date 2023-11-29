@@ -1,0 +1,17 @@
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: client-service
+  name: client-service
+  namespace: {{ .Values.global.namespace }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: "client-8000"
+      port: 8000
+      targetPort: 8000
+  selector:
+    io.kompose.service: client-service
+status:
+  loadBalancer: {}
