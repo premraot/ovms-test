@@ -69,15 +69,3 @@ tolerations: []
 
 affinity: {}
 
-
-# Add args to the container specification
-containers:
-  - name: {{ .Chart.Name }}
-    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-    command: ["ovms/bin/ovms"]  # Specify the path to your command
-    args:
-      - "--port=9000"
-      - "--model_name=face-detection"
-      - "--model_path=/models/face-detection"
-      - "--shape=auto"
-

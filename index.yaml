@@ -1,3 +1,14 @@
 apiVersion: v1
-entries: {}
-generated: "2023-11-29T15:05:41.618284658+05:30"
+entries:
+  ovms:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-11-30T12:41:26.371839361+05:30"
+    description: A Helm chart for Kubernetes
+    digest: b6003bdf2ab54e929b7f1bfad715bdb115a615e0124d60589415964ab39a6062
+    name: ovms
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/premraot/ovms-test/main/ovms.tgz
+    version: 0.1.0
+generated: "2023-11-30T12:41:26.370636721+05:30"
