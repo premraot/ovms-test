@@ -22,7 +22,7 @@ spec:
       containers:
         - name: ovms-server
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: [--port=9000, --model_name=face-detection, --model_path=/models/face-detection, --shape=auto]
+          command: ["/ovms/bin/ovms", "--port=9000"," --model_name=face-detection", "--model_path=/models/face-detection", "--shape=auto"]
           ports:
             - containerPort: {{ .Values.service.port }}
               protocol: TCP
