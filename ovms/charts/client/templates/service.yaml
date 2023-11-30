@@ -12,6 +12,6 @@ spec:
       port: 8000
       targetPort: 8000
   selector:
-    io.kompose.service: client-service
+    io.kompose.service: ovms-client
 status:
   loadBalancer: {}

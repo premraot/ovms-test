@@ -11,6 +11,6 @@ spec:
       port: 9000
       targetPort: 9000
   selector:
-    io.kompose.service: server-service
+    io.kompose.service: ovms-server
 status:
   loadBalancer: {}
