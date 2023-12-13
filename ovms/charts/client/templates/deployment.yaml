@@ -30,7 +30,7 @@ spec:
           volumeMounts:
             - mountPath: /app
               name: ovms-client-claim0
-      restartPolicy: Always
+      restartPolicy: OnFailure
       volumes:
         - name: ovms-client-claim0
           persistentVolumeClaim:
