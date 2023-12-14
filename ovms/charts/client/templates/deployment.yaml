@@ -28,7 +28,7 @@ spec:
               protocol: TCP
           resources: {}
           volumeMounts:
-            - mountPath: /opt/intel/openvino_2023/model_server/demos/face_detection/python/results
+            - mountPath: /app
               name: ovms-client-claim0
       restartPolicy: OnFailure
       volumes:
