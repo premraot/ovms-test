@@ -30,7 +30,7 @@ spec:
           volumeMounts:
             - mountPath: /opt/intel/openvino_2023/model_server/demos/face_detection/python/results
               name: ovms-client-claim0
-      restartPolicy: Never
+          restartPolicy: Never
       volumes:
         - name: ovms-client-claim0
           persistentVolumeClaim:
